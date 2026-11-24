@@ -34,7 +34,7 @@ JPEG_EXTS = {".jpg", ".jpeg"}
 PNG_EXTS = {".png"}
 FORBIDDEN_IMAGE_EXTS = {".heic", ".heif", ".hif"}  # 闸门无法校验 EXIF 的格式 → 一律拒绝
 
-FM_EXEMPT_DIRS = {"_layouts", "_includes", "tools", ".github", "_data", "assets"}
+FM_EXEMPT_DIRS = {"_layouts", "_includes", "tools", ".github", "_data", "assets", "raw"}
 SCAN_EXEMPT_DIRS = {"tools", ".github"}  # 工具源码含模式定义，扫描会自命中
 
 # 邮箱规则：只允许出现在联系页白名单（docs/01 调整 A13）；.json 为投影产物（生成前已过闸门）
@@ -536,7 +536,10 @@ def cmd_project(args) -> int:
     out = site_dir / "_data" / "identity.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(content, encoding="utf-8")
-    print(f"[GATE] ✅ 投影完成 → {out}")
+    # 机器可读身份卡同时作为站点根静态文件对外提供（/ai-profile.json，docs/01 阶段 2 定稿）
+    root_profile = site_dir / "ai-profile.json"
+    root_profile.write_text(content, encoding="utf-8")
+    print(f"[GATE] ✅ 投影完成 → {out} 与 {root_profile}")
     print("[GATE] 仅映射白名单字段（display_name/role/summary/city/country/site_url/"
           "work_email/github_url/topics/capabilities）；vault 其余文件一律不外传。")
     return EXIT_OK

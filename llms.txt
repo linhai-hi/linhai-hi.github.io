@@ -1,0 +1,23 @@
+# 林海 · AI 内容创作者
+
+> 林海，AI 内容创作者。持续记录真实使用 AI 解决问题的方法与心得，把每一次实践沉淀为可复用的经验。
+
+## 关于
+
+- [关于林海](https://linhai-hi.github.io/about/): 身份、联系方式与 AI 档案入口。
+- [AI 档案（机器可读 JSON）](https://linhai-hi.github.io/ai-profile.json): schema v1 结构化身份卡。
+
+## 栏目
+
+- [灵感闪念](https://linhai-hi.github.io/ideas/): 随手记录的想法与观察。
+- [读书笔记](https://linhai-hi.github.io/reading/): 读过的书与提炼。
+- [项目与问题复盘](https://linhai-hi.github.io/review/): 项目过程与问题解决的复盘。
+- [考试经验](https://linhai-hi.github.io/exams/): 考试与考证经验。
+- [插件与工具开发](https://linhai-hi.github.io/plugins/): 自建插件、脚本与工具。
+- [AI 使用技巧](https://linhai-hi.github.io/aitips/): AI 工具的使用方法与心得。
+- [复述学习](https://linhai-hi.github.io/retell/): 学习他人优质内容后的复述与再输出（注明出处）。
+- [难题与坑](https://linhai-hi.github.io/pitfalls/): 踩过的坑与解决方案。
+
+## 文章
+
+- [示例文章：把第一条灵感写下来（结构验证用，可删除）](https://linhai-hi.github.io/ideas/first-post-sample/): 2026-11-22

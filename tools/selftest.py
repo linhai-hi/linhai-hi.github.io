@@ -153,7 +153,8 @@ def main() -> int:
             "work_email: sample.contact@example.com\ngithub_url:\nsite_url:\n```\n",
             encoding="utf-8")
         r = run_gate(["project", "--vault", str(pv3), "--site", str(ps3)])
-        ok = r.returncode == 0 and (ps3 / "_data" / "identity.json").exists()
+        ok = (r.returncode == 0 and (ps3 / "_data" / "identity.json").exists()
+              and (ps3 / "ai-profile.json").exists())
         results.append(("投影:含工作邮箱→放行(A13回归)", f"exit={r.returncode}", "PASS" if ok else "FAIL"))
         passed, failed = passed + ok, failed + (not ok)
     finally:
