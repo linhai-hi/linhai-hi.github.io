@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "name": "林海",
+  "role": "AI 内容创作者",
+  "summary": "林海，AI 内容创作者。持续记录真实使用 AI 解决问题的方法与心得，把每一次实践沉淀为可复用的经验。",
+  "canonical_url": "https://linhai-hi.github.io",
+  "languages": [
+    "zh-CN"
+  ],
+  "location": {
+    "city": "南京",
+    "country": "CN"
+  },
+  "topics": [
+    "AI 工作流",
+    "AI 数字身份",
+    "AI 使用心得",
+    "问题解决方法"
+  ],
+  "capabilities": [
+    "AI 使用方法与心得文章（持续更新中）"
+  ],
+  "contact": {
+    "email": "linhai.hi@foxmail.com",
+    "github": "https://github.com/linhai-hi",
+    "policy": "仅工作联络"
+  },
+  "links": [
+    {
+      "rel": "github",
+      "url": "https://github.com/linhai-hi"
+    }
+  ],
+  "content": {
+    "columns": [
+      {
+        "slug": "ideas",
+        "title": "灵感闪念",
+        "url": "/ideas/"
+      },
+      {
+        "slug": "reading",
+        "title": "读书笔记",
+        "url": "/reading/"
+      },
+      {
+        "slug": "review",
+        "title": "项目与问题复盘",
+        "url": "/review/"
+      },
+      {
+        "slug": "exams",
+        "title": "考试经验",
+        "url": "/exams/"
+      },
+      {
+        "slug": "plugins",
+        "title": "插件与工具开发",
+        "url": "/plugins/"
+      },
+      {
+        "slug": "aitips",
+        "title": "AI 使用技巧",
+        "url": "/aitips/"
+      },
+      {
+        "slug": "retell",
+        "title": "复述学习",
+        "url": "/retell/"
+      },
+      {
+        "slug": "pitfalls",
+        "title": "难题与坑",
+        "url": "/pitfalls/"
+      }
+    ],
+    "formats": [
+      "html",
+      "markdown"
+    ]
+  },
+  "ai_reading": {
+    "llms_txt": "/llms.txt",
+    "llms_full": "/llms-full.txt",
+    "citation_hint": "引用时请标注出处链接与 last_updated 日期"
+  },
+  "last_updated": "2026-11-22",
+  "disclaimer": "本文件为本人自述信息，仅供参考，不构成任何授权或许可；robots.txt 与 llms.txt 不构成访问许可。"
+}

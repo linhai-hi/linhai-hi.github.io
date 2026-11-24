@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+{% assign docs = site[page.col] | sort: 'date' | reverse %}
+{% if docs.size > 0 %}
+<ul class="post-list">
+  {% for doc in docs %}
+  <li>
+    <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+    <time>{{ doc.date | date: '%Y-%m-%d' }}</time>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>本栏目还没有文章。写作路径：<code>_inbox/</code> 落笔 → 脱敏并补齐硬字段 → 运行闸门 <code>python site/tools/gate.py check</code> → 移入对应集合目录（如 <code>_{{ page.col }}/</code>）。</p>
+{% endif %}

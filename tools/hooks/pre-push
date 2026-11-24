@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# pre-push 闸门（fail-closed）：本钩子任何非零退出都会中止 push。
+# 启用：git config core.hooksPath tools/hooks
+# 说明：本仓库 = site/（vault 在仓库外），钩子只跑 check；
+#       vault 变更后请手动运行 python tools/gate.py project 更新 _data/identity.json。
+# 本机无 Python 时钩子失败 = 按 fail-closed 设计拦截推送（docs/01 §5.4），不是 bug。
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+
+if command -v python >/dev/null 2>&1; then
+  PY=python
+elif command -v python3 >/dev/null 2>&1; then
+  PY=python3
+else
+  echo "[gate] 本机无 Python：按 fail-closed 设计拦截推送；可改用 CI 闸门（docs/01 §5.4）。" >&2
+  exit 1
+fi
+
+exec "$PY" tools/gate.py check

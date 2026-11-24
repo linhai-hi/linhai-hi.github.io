@@ -1,0 +1,43 @@
+# CI：闸门 → 构建 → 部署 单链（docs/01 §5.4）
+# 前提（用户设置）：仓库 Settings → Pages → Source = "GitHub Actions"，
+# 否则经典分支构建会绕过本闸门（fail-closed 失效）。
+# 插件均在 GitHub Pages 白名单（官方实测 2026-11-22）；actions 均为 GitHub 官方。
+name: gate-build-deploy
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 发布闸门（命中即中止）
+        run: python tools/gate.py check
+
+  build-deploy:
+    needs: gate          # 闸门失败 = 不构建不部署（服务端 fail-closed）
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: .
+          destination: ./_site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+      - id: deployment
+        uses: actions/deploy-pages@v4

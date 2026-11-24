@@ -1,0 +1,46 @@
+# personal-site · site/_config.yml
+# 生成器定稿 Jekyll（docs/01 §2）；所有插件均在 GitHub Pages 白名单内
+# （官方实测：https://pages.github.com/versions/ ，jekyll-seo-tag 2.8.0 / jekyll-sitemap 1.4.0 / jekyll-feed 0.17.0，2026-11-22 抓取）
+title: 个人站（占位标题）
+description: AI 时代的个人站：人可读 · LLM 可检索 · Agent 可交互
+lang: zh-CN
+# 用户建库后填：url: "https://<username>.github.io"（或自定义域名；OG 绝对链接依赖它）
+url: ""
+markdown: kramdown
+# 干净 URL：about.md→/about/、ideas.md→/ideas/（栏目页=目录索引，与集合文档 /ideas/<name>/ 不冲突）
+permalink: pretty
+
+# 八栏目定死（docs/00 §4.2，阶段 1b）。集合名用单词 slug（评估调整 A11）。
+collections:
+  ideas:    { output: true, permalink: "/ideas/:name/" }
+  reading:  { output: true, permalink: "/reading/:name/" }
+  review:   { output: true, permalink: "/review/:name/" }
+  exams:    { output: true, permalink: "/exams/:name/" }
+  plugins:  { output: true, permalink: "/plugins/:name/" }
+  aitips:   { output: true, permalink: "/aitips/:name/" }
+  retell:   { output: true, permalink: "/retell/:name/" }
+  pitfalls: { output: true, permalink: "/pitfalls/:name/" }
+
+# 中文栏目名（导航与栏目页共用，单一来源）
+columns:
+  - { slug: ideas,    title: 灵感闪念 }
+  - { slug: reading,  title: 读书笔记 }
+  - { slug: review,   title: 项目与问题复盘 }
+  - { slug: exams,    title: 考试经验 }
+  - { slug: plugins,  title: 插件与工具开发 }
+  - { slug: aitips,   title: AI 使用技巧 }
+  - { slug: retell,   title: 复述学习 }
+  - { slug: pitfalls, title: 难题与坑 }
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# 开发工具与 CI 配置留在仓库但不进站点输出；闸门脚本扫描时会显式跳过它们
+exclude:
+  - tools
+  - .github
+  - Gemfile
+  - vendor
+  - .gitignore

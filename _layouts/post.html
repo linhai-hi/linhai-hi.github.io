@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time>{{ page.date | date: '%Y-%m-%d' }}</time>
+      {% if page.type %} · 栏目 {{ page.type }}{% endif %}
+      {% if page.source %} · 来源：{{ page.source }}{% endif %}
+    </p>
+  </header>
+  {{ content }}
+</article>

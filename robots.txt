@@ -1,0 +1,9 @@
+---
+# 本文件带空 front-matter 以启用 Liquid 渲染（Sitemap 依赖 site.url）
+---
+# robots.txt —— 允许常规检索；训练类 AI 爬虫策略留待阶段 2 由用户逐项拍板后修改本文件
+# 依据 docs/02 F4：robots.txt 不是安全墙；发现/爬取/访问/复用/隐私五件事分开决策；
+# 私密/草稿页面绝不进 llms.txt，也不会出现在本站公开路径。
+User-agent: *
+Allow: /
+Sitemap: {{ "/sitemap.xml" | absolute_url }}
