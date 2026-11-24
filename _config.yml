@@ -1,11 +1,11 @@
 # personal-site · site/_config.yml
 # 生成器定稿 Jekyll（docs/01 §2）；所有插件均在 GitHub Pages 白名单内
 # （官方实测：https://pages.github.com/versions/ ，jekyll-seo-tag 2.8.0 / jekyll-sitemap 1.4.0 / jekyll-feed 0.17.0，2026-11-22 抓取）
-title: 个人站（占位标题）
+title: 林海 · AI 内容创作者
 description: AI 时代的个人站：人可读 · LLM 可检索 · Agent 可交互
 lang: zh-CN
 # 用户建库后填：url: "https://<username>.github.io"（或自定义域名；OG 绝对链接依赖它）
-url: ""
+url: "https://linhai-hi.github.io"
 markdown: kramdown
 # 干净 URL：about.md→/about/、ideas.md→/ideas/（栏目页=目录索引，与集合文档 /ideas/<name>/ 不冲突）
 permalink: pretty
